@@ -1,29 +1,29 @@
 function M = rrefSteps(M)
-%refSteps
-%Generate the Row Echelon form of a matrix showing each step in the process
-mSize = size(M);
-sizeX = mSize(1,2);
-sizeY = mSize(1,1);
+  %refSteps
+  %Generate the Row Echelon form of a matrix showing each step in the process
+  mSize = size(M);
+  sizeX = mSize(1,2);
+  sizeY = mSize(1,1);
 
-if ( sizeX == 1 || sizeY == 1 ) 
-   M = ['Error: Cannot calculate Row Echelon Form of a ' num2str(sizeX) 'x' num2str(sizeY) ' matrix'];
-   return;
-end
+  if ( sizeX == 1 || sizeY == 1 ) 
+     M = ['Error: Cannot calculate Row Echelon Form of a ' num2str(sizeX) 'x' num2str(sizeY) ' matrix'];
+     return;
+  end
 
-disp ('Calculating Reduced Row Echelon form of ');
-disp(M);
-disp(' ');
+  disp ('Calculating Reduced Row Echelon form of ');
+  disp(M);
+  disp(' ');
 
-M = organise0 (M);
-M = RowEchelonForm( M, 1, 1 );
-disp ( 'Row Echelon Form is:' );
-disp (M);
+  M = organise0 (M);
+  M = RowEchelonForm( M, 1, 1 );
+  disp ( 'Row Echelon Form is:' );
+  disp (M);
 
-disp (' ');
+  disp (' ');
 
-M = ReducedRowEchelonForm( M, 1, 1 );
-disp ( 'ReducedRow Echelon Form is:' );
-disp (M);
+  M = ReducedRowEchelonForm( M, 1, 1 );
+  disp ( 'ReducedRow Echelon Form is:' );
+  disp (M);
 
 end
 
